@@ -51,28 +51,81 @@ What's the time complexity?
  */
 
 function Stack(capacity) {
-  // implement me...
+  this.capacity = {}
+  this.size = 0
+  this.max = 4
+  
 }
 
 Stack.prototype.push = function(value) {
-  // implement me...
+  if(this.size <= this.max){
+  this.size++
+  this.capacity[this.size] = value
+  }else{
+    return("Max capacity already reached. Remove element before adding a new one.")
+  }
+
 };
 // Time complexity:
 
 Stack.prototype.pop = function() {
-  // implement me...
+
+  delete this.capacity[this.size]
+  this.size--
 };
 // Time complexity:
 
 Stack.prototype.peek = function() {
-  // implement me...
+  return (this.capacity[this.size])
 };
 // Time complexity:
 
 Stack.prototype.count = function() {
-  // implement me...
+ return this.size
 };
+
+Stack.prototype.contains = function(val) {
+  for(n in this.capacity){
+    if(this.capacity[n] === val)
+    return true
+  }
+  return false
+}
+
+Stack.prototype.until = function(val){
+
+for (n in this.capacity){
+  console.log(this.capacity[n])
+  if (this.capacity[n] === val){
+     return this.size - n
+}
+
+}
+return "The entree is not found"
+}
+
 // Time complexity:
+let myStack = new Stack
+
+myStack.push('stuff')
+myStack.push('like')
+myStack.push('stuff')
+myStack.push('stuff')
+myStack.pop()
+myStack.push('this')
+myStack.pop()
+myStack.push('was')
+myStack.pop()
+myStack.push('fun')
+myStack.push('was')
+
+console.log(myStack.push('was'))
+console.log(myStack.until('stuff'))
+console.log(myStack.peek())
+console.log(myStack.count())
+console.log(myStack.contains('stuff'))
+console.log(myStack.contains('dsgh'))
+console.log(myStack)
 
 
 /*
@@ -93,3 +146,30 @@ You are given three towers (stacks) and N disks, each of different size. You can
    3. no disk can be placed on top of a disk that is smaller than it
 The disks begin on tower#1. Write a function that will move the disks from tower#1 to tower#3 in such a way that none of the constraints are violated.
  */
+function Newstack () {
+  this.capacity = {}
+  this.size = 0
+}
+
+// Implement a stack with a min method which returns the minimum element currently in the stack. This method 
+// should have O(1) time complexity. Make sure your implementation handles duplicates.
+
+Newstack.prototype.min = function(){
+
+}
+
+// 2. Sort a stack so that its elements are in ascending order.
+
+Newstack.prototype.sort = function(){
+  this.capacity.sort((a,b) => a - b)
+}
+
+
+// 3. Given a string, determine if the parenthesis in the string are balanced.
+// Ex: balancedParens( 'sqrt(5*(3+8)/(4-2))' ) => true
+// Ex: balancedParens( 'Math.min(5,(6-3))(' ) => false
+
+Newstack.prototype.balanced = function(str){
+
+}
+
