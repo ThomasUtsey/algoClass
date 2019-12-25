@@ -54,17 +54,15 @@ console.log(recursiveExponent(10,5))
 const arr = [5,3,5,7,9,4,6,3,6,7,8]
 //5. Write a function 'recursiveMultiplihat takes two arguments, 'arr and num', and multiplies each arr value into by num and returns an array of the values.er' t
 recursiveMultiplier = (arr,num) =>{
-    let newArr = []
     let count = 0
 
     recur = (arr,num) =>{
-        if(arr.length > newArr.length){
-            newArr.push(arr[count] * num)
-            console.log(newArr)
+        if(arr.length > count){
+            arr[count] *= num
             count++
            return recur(arr,num)
         }else{
-            return newArr
+            return arr
         }    
     } 
     

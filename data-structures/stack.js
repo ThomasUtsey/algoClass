@@ -146,11 +146,17 @@ You are given three towers (stacks) and N disks, each of different size. You can
    3. no disk can be placed on top of a disk that is smaller than it
 The disks begin on tower#1. Write a function that will move the disks from tower#1 to tower#3 in such a way that none of the constraints are violated.
  */
-function Newstack () {
-  this.capacity = {}
-  this.size = 0
-}
+function Newstack (capacity) {
 
+  this.capacity = capacity
+  this.storage = {}
+  this.size = 0
+  this.min = new Newstack();
+
+}
+MinStack.prototype.push = function(value){
+
+}
 // Implement a stack with a min method which returns the minimum element currently in the stack. This method 
 // should have O(1) time complexity. Make sure your implementation handles duplicates.
 
